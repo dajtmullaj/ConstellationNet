@@ -1,4 +1,4 @@
-# Attentional Constellation Nets For Few-shot Learning
+# Attentional Constellation Nets For Few-shot Learning (Updated with PACS)
 
 ## Introduction
 This repository contains the official code and pretrained models for [Attentional Constellation Nets For Few-shot Learning (ICLR 2021)](https://openreview.net/pdf?id=vujTf_I8Kmc). In this paper, we tackle the few-shot learning problem and make an effort to enhance structured features by expanding CNNs with a constellation model, which performs cell feature clustering and encoding with a dense part representation; the relationships among the cell features are further modeled by an attention mechanism. With the additional constellation branch to increase the awareness of object parts, our method is able to attain the advantages of the CNNs while making the overall internal representations more robust in the few-shot learning setting. Our approach attains a significant improvement over the existing methods in few-shot learning on the CIFAR-FS, FC100, and mini-ImageNet benchmarks.
@@ -48,6 +48,8 @@ For more details, please refer to [Attentional Constellation Nets For Few-shot L
    - [Mini-ImageNet](https://drive.google.com/file/d/1fJAK5WZTjerW7EWHHQAR9pRJVNg1T1Y7/view?usp=sharing) (courtesy of [Spyros Gidaris](https://github.com/gidariss/FewShotWithoutForgetting))
    - [CIFAR-FS](https://drive.google.com/file/d/1GjGMI0q3bgcpcB_CjI40fX54WgLPuTpS/view?usp=sharing) (courtesy of [Kwonjoon Lee](https://github.com/kjunelee/MetaOptNet))
    - [FC100](https://drive.google.com/file/d/1_ZsLyqI487NRDQhwvI7rg86FK3YAZvz1/view?usp=sharing) (courtesy of [Kwonjoon Lee](https://github.com/kjunelee/MetaOptNet))
+   - [PACS](https://drive.google.com/drive/folders/1xCVNME8avKj4OH-J5sMDXTC6Ztb6RWzM?usp=sharing) (The name of the dataset indicates which domain has ben used for testing)
+
    The code assumes datasets are saved according to the following structure:
    
 ```
@@ -66,9 +68,12 @@ For more details, please refer to [Attentional Constellation Nets For Few-shot L
 │   ├── FC100_test.pickle
 │   ├── FC100_train.pickle
 │   ├── FC100_val.pickle
-
+├── photo
+│   ├── PHOTO_test.pickle
+│   ├── PHOTO_train.pickle
+│   ├── PHOTO_val.pickle
+|
 ```
-
 
 ### Pre-trained Checkpoints
 

@@ -1,3 +1,7 @@
+"""
+Module used for creating dictionaries with PACS data.
+"""
+
 import pickle
 import os
 import numpy as np
