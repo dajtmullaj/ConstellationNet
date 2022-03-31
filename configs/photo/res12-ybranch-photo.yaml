@@ -22,20 +22,20 @@ model_args:
         self_attention_kwargs: {
            multi_head: 8,
            positional_encoding: 'sine_pe',
-           embedding_size: 7,
+           embedding_size: 64,
            pre_normalize: false,
            },
         feat_cluster_kwargs: {
             K: 100.0, 
-            num_clusters: 7,
+            num_clusters: 64,
             fix_init: true,
-            channels: 7, 
+            channels: 64, 
             V_count_init: 1.0,
         },
         y_branch_stage: 2
     }
     classifier: linear-classifier 
-    classifier_args: {n_classes: 7}
+    classifier_args: {n_classes: 64}
     sideout_info: []
 #     method: 'cos'
 #     temp: 10.0
