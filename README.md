@@ -40,7 +40,7 @@ For more details, please refer to [Attentional Constellation Nets For Few-shot L
 ### Code and Datasets Preparation
 1. Clone the repo.
    ```bash
-   git clone https://github.com/mlpc-ucsd/ConstellationNet.git
+   git clone https://github.com/dajtmullaj/ConstellationNet.git
    cd ConstellationNet
    ```
 
