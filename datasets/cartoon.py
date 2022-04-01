@@ -79,6 +79,7 @@ class CARTOON(Dataset):
                 ])
             else:
                 self.transform = transforms.Compose([
+                    transforms.Resize(32),
                     lambda x: np.asarray(x),
                     transforms.ToTensor(),
                     normalize
