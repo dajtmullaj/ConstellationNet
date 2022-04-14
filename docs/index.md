@@ -64,7 +64,7 @@ We used the same configuration used by the authors to set the hyperparameters of
 |------------------------------|---|------------------------------||---|------------------------------------|
 | **Model**                    |   | **1-shot**     | **5-shot**   |   | **1-shot**          | **5-shot**   |
 | **ConstellationNet (paper)** |   | 69.3 ± 0.3     | 82.7 ± 0.2   |   | 58.82 ± 0.23        | 75.00 ± 0.18 |
-| **ConstellationNet (ours)**  |   | 69.03 ± 0.35   | 83.03 ± 0.33 |   |                     |              |
+| **ConstellationNet (ours)**  |   | 69.03 ± 0.35   | 83.03 ± 0.33 |   | 58.85 ± 0.28        | 74.91 ± 0.22 |
 
 The results obtained by us match with the ones presented by the authors within the confidence interval.
 
@@ -117,7 +117,8 @@ However, given the fact that we managed to reproduce the results of the original
 Furthermore we got promising results, given the hardware limitations, when we tried to use the model for domain generalization indicating that further research might want to build on this to further explore the parallels between models used for few-shot learning and domain generalization. 
 
 ### Contributions
-Dajt Mullaj - :
+Dajt Mullaj - 5649455: Set up the Google Cloud Virtual Machine for reproduction of the results. Run the model to reproduce the results. Prepared the PACS dataset by creating the script, configuration and inserting it into the code pipeline. Made the poster. Worked on the blog post. 
+
 Kirsten Bos - 4589793:
 Marco de Böck - 4494237:  
 
