@@ -70,7 +70,8 @@ class PHOTO(Dataset):
             
             if split=='train' :
                 self.transform = transforms.Compose([
-                    transforms.RandomCrop(32, padding=4),
+                    transforms.Resize(94),
+                    transforms.RandomCrop(94, padding=4),
                     transforms.ColorJitter(brightness=0.4, contrast=0.4, saturation=0.4),
                     transforms.RandomHorizontalFlip(),
                     lambda x: np.asarray(x),
@@ -79,7 +80,7 @@ class PHOTO(Dataset):
                 ])
             else:
                 self.transform = transforms.Compose([
-                    transforms.Resize(32),
+                    transforms.Resize(94),
                     lambda x: np.asarray(x),
                     transforms.ToTensor(),
                     normalize
