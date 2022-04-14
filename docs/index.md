@@ -32,7 +32,7 @@ The first step the author proposes is to add feature clustering. By the latter w
 
 ![clustering](clustering.png)
 
-_Figure 2: _
+*Figure 2: From [1] Each color represents a cluster, and each point, marked as "·", represents a cell assigned to a cluster center.*
 
 By computing the distance from each feature cell to each centroid, we can finally have a distance map, effectively obtaining a spatial distribution of the different clusters (which correspond to images’ parts or features). 
 
@@ -43,14 +43,17 @@ Effectively, using clustering and self-attention, the model is then able to comp
 
 ![selfattention](selfattention.png)
 
-_Figure 3: _
+*Figure 3: From [1] We visualize attention maps of one query feature (at the location of red point
+in left part) with all key features. The middle part shows the attention maps corresponding to 8 heads in the
+multi-head attention. The right part shows an overlapped map of all attention maps..*
 
 ### Reproducing the Results of the Paper
 For the reproduction of the results, it is chosen to use the existing code to reproduce the results in the paper. There are different network backbones available: Conv-4 and ResNet-12. We will focus on reproduction with the Conv-4 backbone, which is a network with 4 convolutional blocks. Each block has a 3×3 convolutional layer, a batch normalization layer, a ReLU activation and a 2×2 max-pooling layer. The model architecture can be seen in Figure 4.
 
 ![architecture](architecture.png)
 
-_Figure 4: _
+*Figure 4: From [1] the bottom part is the network architecture
+based on Conv-4 backbone, and the top part shows the constellation model* 
 
 We focused on two datasets the authors used to evaluate their model: CIFAR-FS and mini-ImageNet. The former is a few-shot classification benchmark containing 100 classes from CIFAR-100. The classes are randomly split into 64, 16 and 20 classes for training, validation and testing respectively. Each class contains 600 images of size 32 × 32.
 mini-ImageNet contains 100 classes from ILSVRC-2012. The split between training and testing mirrors the one used for CIFAR-FS, but the size of the images is, instead, 84 × 84.
@@ -79,7 +82,7 @@ PACS stands for Photo, Art Painting, Cartoon and Sketch. It contains four differ
 
 ![pacs](pacs.png)
 
-_Figure 5: _
+*Figure 5: From [2] the different domains for PACS.*
 
 Since we wanted to use the same pipeline the authors implemented to train and test the model for CIFAR-FS and mini-ImageNet, we had to prepare the dataset. For that purpose we implemented a Python script which, given the root directory of where the PACS dataset is located, converts each image in a numpy array and pickles the dictionaries containing the training and test data before saving it. 
 
