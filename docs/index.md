@@ -32,7 +32,7 @@ The first step the author proposes is to add feature clustering. By the latter w
 
 ![clustering](clustering.png)
 
-*Figure 2: *
+_Figure 2: _
 
 By computing the distance from each feature cell to each centroid, we can finally have a distance map, effectively obtaining a spatial distribution of the different clusters (which correspond to images’ parts or features). 
 
@@ -43,7 +43,7 @@ Effectively, using clustering and self-attention, the model is then able to comp
 
 ![selfattention](selfattention.png)
 
-*Figure 3: jkhjk kh jkj j *
+_Figure 3: _
 
 ### Reproducing the Results of the Paper
 For the reproduction of the results, it is chosen to use the existing code to reproduce the results in the paper. There are different network backbones available: Conv-4 and ResNet-12. We will focus on reproduction with the Conv-4 backbone, which is a network with 4 convolutional blocks. Each block has a 3×3 convolutional layer, a batch normalization layer, a ReLU activation and a 2×2 max-pooling layer. The model architecture can be seen in Figure 4.
@@ -57,9 +57,9 @@ mini-ImageNet contains 100 classes from ILSVRC-2012. The split between training 
 
 We used the same configuration used by the authors to set the hyperparameters of the model. We present the results on Table 1.
 
-| **Results Backbone: Conv4**  |   | **CIFAR-FS 5-way**               | **mini-ImageNet 5-way**               |
-|--------------------------|---|----------------|--------------|---------------------|--------------|
-| **Model**                    |   | **1-shot**         | **5-shot**       | **1-shot**              | **5-shot**       |
+| **Results Backbone: Conv4**  |   | **CIFAR-FS 5-way**            | **mini-ImageNet 5-way**            |
+|------------------------------|---|----------------|--------------|---------------------|--------------|
+| **Model**                    |   | **1-shot**     | **5-shot**   | **1-shot**          | **5-shot**   |
 | **ConstellationNet (paper)** |   | 69.3 ± 0.3     | 82.7 ± 0.2   | 58.82 ± 0.23        | 75.00 ± 0.18 |
 | **ConstellationNet (ours)**  |   | 69.03 ± 0.35   | 83.03 ± 0.33 |                     |              |
 
@@ -94,11 +94,11 @@ We tried to produce the results of the authors responsible for creating PACS, ob
 #### Results
 The PHOTO dataset is trained and evaluated in two different ways. In the first one, the image size is 32 × 32 pixels and the number of clusters is 64. This gave an accuracy of 31.80 ± 0.25 for 1-shot and an accuracy of 40.39 ± 0.24 for 5-shot, training on 60 epochs. We tried to improve the accuracy by increasing the image size to 94 × 94 and by reducing the number of clusters to 32. This gives much better results, even though the training consisted of only 20 epochs (a limitation given by the limited memory we had on the virtual machine). The accuracy for 1-shot increased from 31.80 ± 0.25 to 54.59 ± 0.64 and the accuracy for 5-shot increased from 40.39 ± 0.24 to 70.05 ± 0.23. 
 
-| **Results Backbone: Conv4**  |   | **PHOTO (from PACS) 5-way**               |
-|--------------------------|---|-------------------------|--------------|
+| **Results Backbone: Conv4**  |   | **PHOTO (from PACS) 5-way**            |
+|------------------------------|---|-------------------------|--------------|
 | **Model**                    |   | 1-shot                  | 5-shot       |
-| **Photo 32 × 32** |   | 31.80 ± 0.25                    | 40.39 ± 0.24         |
-| **Photo 94 × 94**   |   | 54.59 ± 0.64            | 70.05 ± 0.23 |
+| **Photo 32 × 32**            |   | 31.80 ± 0.25            | 40.39 ± 0.24 |
+| **Photo 94 × 94**            |   | 54.59 ± 0.64            | 70.05 ± 0.23 |
 
 We can see that we did not manage to reach the accuracy obtained by the authors of PACS. However since we only used less than half of the original image size, we expect, given higher resources, that ConstellationNet will be able to produce close to state of the art performance for PACS.
 
