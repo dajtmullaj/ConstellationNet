@@ -50,14 +50,14 @@ For the reproduction of the results, it is chosen to use the existing code to re
 
 ![architecture](architecture.png)
 
-_*Figure 4: *_
+_Figure 4: _
 
 We focused on two datasets the authors used to evaluate their model: CIFAR-FS and mini-ImageNet. The former is a few-shot classification benchmark containing 100 classes from CIFAR-100. The classes are randomly split into 64, 16 and 20 classes for training, validation and testing respectively. Each class contains 600 images of size 32 × 32.
 mini-ImageNet contains 100 classes from ILSVRC-2012. The split between training and testing mirrors the one used for CIFAR-FS, but the size of the images is, instead, 84 × 84.
 
 We used the same configuration used by the authors to set the hyperparameters of the model. We present the results on Table 1.
 
-| **Results Backbone: Conv4**  |   | **CIFAR-FS 5-way** |              | **mini-ImageNet 5-way** |              |
+| **Results Backbone: Conv4**  |   | **CIFAR-FS 5-way**               | **mini-ImageNet 5-way**               |
 |--------------------------|---|----------------|--------------|---------------------|--------------|
 | **Model**                    |   | **1-shot**         | **5-shot**       | **1-shot**              | **5-shot**       |
 | **ConstellationNet (paper)** |   | 69.3 ± 0.3     | 82.7 ± 0.2   | 58.82 ± 0.23        | 75.00 ± 0.18 |
@@ -89,10 +89,16 @@ We then added a configuration file and python module (responsible for transformi
 
 We trained the model on a Google Cloud Virtual Machine with one GPU. Due to the limitations of the virtual machine GPU memory we could not process the images in their original size, but had to resize them. 
 
-We tried to produce the results of the authors responsible for creating PACS, obtained when they trained on Art Painting, Sketch and Cartoon and tested on PHOTO.
+We tried to produce the results of the authors responsible for creating PACS, obtained when they trained on Art Painting, Sketch and Cartoon and tested on Photo.
 
 #### Results
 The PHOTO dataset is trained and evaluated in two different ways. In the first one, the image size is 32 × 32 pixels and the number of clusters is 64. This gave an accuracy of 31.80 ± 0.25 for 1-shot and an accuracy of 40.39 ± 0.24 for 5-shot, training on 60 epochs. We tried to improve the accuracy by increasing the image size to 94 × 94 and by reducing the number of clusters to 32. This gives much better results, even though the training consisted of only 20 epochs (a limitation given by the limited memory we had on the virtual machine). The accuracy for 1-shot increased from 31.80 ± 0.25 to 54.59 ± 0.64 and the accuracy for 5-shot increased from 40.39 ± 0.24 to 70.05 ± 0.23. 
+
+| **Results Backbone: Conv4**  |   | **PHOTO (from PACS) 5-way**               |
+|--------------------------|---|-------------------------|--------------|
+| **Model**                    |   | 1-shot                  | 5-shot       |
+| **Photo 32 × 32** |   | 31.80 ± 0.25                    | 40.39 ± 0.24         |
+| **Photo 94 × 94**   |   | 54.59 ± 0.64            | 70.05 ± 0.23 |
 
 We can see that we did not manage to reach the accuracy obtained by the authors of PACS. However since we only used less than half of the original image size, we expect, given higher resources, that ConstellationNet will be able to produce close to state of the art performance for PACS.
 
