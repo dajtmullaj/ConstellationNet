@@ -22,20 +22,20 @@ model_args:
         self_attention_kwargs: {
            multi_head: 8,
            positional_encoding: 'sine_pe',
-           embedding_size: 64,
+           embedding_size: 32,
            pre_normalize: false,
            },
         feat_cluster_kwargs: {
             K: 100.0, 
-            num_clusters: 64,
+            num_clusters: 32,
             fix_init: true,
-            channels: 64, 
+            channels: 32, 
             V_count_init: 1.0
         },
         y_branch_stage: 2
     }
     classifier: linear-classifier 
-    classifier_args: {n_classes: 64}
+    classifier_args: {n_classes: 32}
     sideout_info: []
 
 train_branch_1: True
