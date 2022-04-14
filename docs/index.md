@@ -30,6 +30,9 @@ These approaches are clustering and self-attention.
 #### Feature Clustering
 The first step the author proposes is to add feature clustering. By the latter we mean that, once a feature map is computed by a convolution layer, its cells (vectors of all channels for a specific position of the feature map) are divided into different clusters using k-means. Each cell is therefore assigned, in an approximative manner, to one of the centroids, meaning that for each feature cell we calculate the probability for it to belong to any of the centroids. The total number of centroids is a hyperparameter of the model. 
 
+![clustering](clustering.png)<br>
+*Figure 2: *
+
 By computing the distance from each feature cell to each centroid, we can finally have a distance map, effectively obtaining a spatial distribution of the different clusters (which correspond to images’ parts or features). 
 
 #### Feature Relation and Spatial Configuration 
@@ -37,8 +40,14 @@ The authors, after computing the distance map, use a self-attention mechanism to
 
 Effectively, using clustering and self-attention, the model is then able to compute explicit features encoding structural features (clustering) and their relation within the image space (self-attention). These features yield new information which is able to strengthen the convolutional features (the features computed implicitly by the model). 
 
+![selfattention](selfattention.png)<br>
+*Figure 3: *
+
 ### Reproducing the Results of the Paper
-For the reproduction of the results, it is chosen to use the existing code to reproduce the results in the paper. There are different network backbones available: Conv-4 and ResNet-12. We will focus on reproduction with the Conv-4 backbone, which is a network with 4 convolutional blocks. Each block has a 3×3 convolutional layer, a batch normalization layer, a ReLU activation and a 2×2 max-pooling layer. The model architecture can be seen in Figure ….
+For the reproduction of the results, it is chosen to use the existing code to reproduce the results in the paper. There are different network backbones available: Conv-4 and ResNet-12. We will focus on reproduction with the Conv-4 backbone, which is a network with 4 convolutional blocks. Each block has a 3×3 convolutional layer, a batch normalization layer, a ReLU activation and a 2×2 max-pooling layer. The model architecture can be seen in Figure 4.
+
+![architecture](architecture.png)<br>
+*Figure 4: *
 
 We focused on two datasets the authors used to evaluate their model: CIFAR-FS and mini-ImageNet. The former is a few-shot classification benchmark containing 100 classes from CIFAR-100. The classes are randomly split into 64, 16 and 20 classes for training, validation and testing respectively. Each class contains 600 images of size 32 × 32.
 mini-ImageNet contains 100 classes from ILSVRC-2012. The split between training and testing mirrors the one used for CIFAR-FS, but the size of the images is, instead, 84 × 84.
