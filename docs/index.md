@@ -57,11 +57,11 @@ mini-ImageNet contains 100 classes from ILSVRC-2012. The split between training 
 
 We used the same configuration used by the authors to set the hyperparameters of the model. We present the results on Table 1.
 
-| **Results Backbone: Conv4**  |   | **CIFAR-FS**                 || **mini-ImageNet**                  |
-|------------------------------|---|------------------------------||------------------------------------|
-| **Model**                    |   | **1-shot**     | **5-shot**   | **1-shot**          | **5-shot**   |
-| **ConstellationNet (paper)** |   | 69.3 ± 0.3     | 82.7 ± 0.2   | 58.82 ± 0.23        | 75.00 ± 0.18 |
-| **ConstellationNet (ours)**  |   | 69.03 ± 0.35   | 83.03 ± 0.33 |                     |              |
+| **Results Backbone: Conv4**  |   | **CIFAR-FS**                 ||   | **mini-ImageNet**                  |
+|------------------------------|---|------------------------------||---|------------------------------------|
+| **Model**                    |   | **1-shot**     | **5-shot**   |   | **1-shot**          | **5-shot**   |
+| **ConstellationNet (paper)** |   | 69.3 ± 0.3     | 82.7 ± 0.2   |   | 58.82 ± 0.23        | 75.00 ± 0.18 |
+| **ConstellationNet (ours)**  |   | 69.03 ± 0.35   | 83.03 ± 0.33 |   |                     |              |
 
 The results obtained by us match with the ones presented by the authors within the confidence interval.
 
@@ -120,3 +120,5 @@ Marco de Böck - 4494237:
 
 ### References
 [1] Xu, W., Wang, H., & Tu, Z. (2020, September). Attentional constellation nets for few-shot learning. In International Conference on Learning Representations.
+
+[2] Li, D., Yang, Y., Song, Y. Z., & Hospedales, T. M. (2017). Deeper, Broader and Artier Domain Generalization. 2017 IEEE International Conference on Computer Vision (ICCV). https://doi.org/10.1109/iccv.2017.591
