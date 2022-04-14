@@ -43,25 +43,25 @@ Effectively, using clustering and self-attention, the model is then able to comp
 
 ![selfattention](selfattention.png)
 
-*Figure 3: *
+*Figure 3: jkhjk kh jkj j *
 
 ### Reproducing the Results of the Paper
 For the reproduction of the results, it is chosen to use the existing code to reproduce the results in the paper. There are different network backbones available: Conv-4 and ResNet-12. We will focus on reproduction with the Conv-4 backbone, which is a network with 4 convolutional blocks. Each block has a 3×3 convolutional layer, a batch normalization layer, a ReLU activation and a 2×2 max-pooling layer. The model architecture can be seen in Figure 4.
 
 ![architecture](architecture.png)
 
-*Figure 4: *
+_*Figure 4: *_
 
 We focused on two datasets the authors used to evaluate their model: CIFAR-FS and mini-ImageNet. The former is a few-shot classification benchmark containing 100 classes from CIFAR-100. The classes are randomly split into 64, 16 and 20 classes for training, validation and testing respectively. Each class contains 600 images of size 32 × 32.
 mini-ImageNet contains 100 classes from ILSVRC-2012. The split between training and testing mirrors the one used for CIFAR-FS, but the size of the images is, instead, 84 × 84.
 
 We used the same configuration used by the authors to set the hyperparameters of the model. We present the results on Table 1.
 
-| Results Backbone: Conv4  |   | CIFAR-FS 5-way |              | mini-ImageNet 5-way |              |
+| **Results Backbone: Conv4**  |   | **CIFAR-FS 5-way** |              | **mini-ImageNet 5-way** |              |
 |--------------------------|---|----------------|--------------|---------------------|--------------|
-| Model                    |   | 1-shot         | 5-shot       | 1-shot              | 5-shot       |
-| ConstellationNet (paper) |   | 69.3 ± 0.3     | 82.7 ± 0.2   | 58.82 ± 0.23        | 75.00 ± 0.18 |
-| ConstellationNet (ours)  |   | 69.03 ± 0.35   | 83.03 ± 0.33 |                     |              |
+| **Model**                    |   | **1-shot**         | **5-shot**       | **1-shot**              | **5-shot**       |
+| **ConstellationNet (paper)** |   | 69.3 ± 0.3     | 82.7 ± 0.2   | 58.82 ± 0.23        | 75.00 ± 0.18 |
+| **ConstellationNet (ours)**  |   | 69.03 ± 0.35   | 83.03 ± 0.33 |                     |              |
 
 The results obtained by us match with the ones presented by the authors within the confidence interval.
 
@@ -79,7 +79,7 @@ PACS stands for Photo, Art Painting, Cartoon and Sketch. It contains four differ
 
 ![pacs](pacs.png)
 
-*Figure 5: *
+_Figure 5: _
 
 Since we wanted to use the same pipeline the authors implemented to train and test the model for CIFAR-FS and mini-ImageNet, we had to prepare the dataset. For that purpose we implemented a Python script which, given the root directory of where the PACS dataset is located, converts each image in a numpy array and pickles the dictionaries containing the training and test data before saving it. 
 
