@@ -1,6 +1,6 @@
 ## Attentional Constellation Nets For Few-shot Learning
 
-In this blog post we will address and evaluate a novel approach to few-shot learning. This approach has been presented in the article Attentional Constellation Nets For Few-shot Learning by Weijian Xu, Yifan Xu, Huaijin Wang, and Zhuowen Tu, published in 2021. Throughout this post we will first introduce few-shot learning. Then we will present the contribution to the field the previously stated paper provided. Finally we will evaluate the models presented in the paper and apply them to a different problem than few-shot learning, namely domain generalization.
+In this blog post we will address and evaluate a novel approach to few-shot learning. This approach has been presented in the article Attentional Constellation Nets For Few-shot Learning [1] by Weijian Xu, Yifan Xu, Huaijin Wang, and Zhuowen Tu, published in 2021. Throughout this post we will first introduce few-shot learning. Then we will present the contribution to the field the previously stated paper provided. Finally we will evaluate the models presented in the paper and apply them to a different problem than few-shot learning, namely domain generalization.
 
 ### Few-Shot Learning
 
@@ -69,7 +69,7 @@ We used the same configuration used by the authors to set the hyperparameters of
 The results obtained by us match with the ones presented by the authors within the confidence interval.
 
 ### ConstellationNet for Domain Generalization 
-After reproducing the results presented in the paper we decided to train the model on a different dataset. However, we used a dataset which wasn’t built specifically for few-shot learning, instead we used PACS (Photos, Art paintings, Cartoons and Sketches), which is a dataset built for evaluating a model against the task of domain generalization. 
+After reproducing the results presented in the paper we decided to train the model on a different dataset. However, we used a dataset which wasn’t built specifically for few-shot learning, instead we used PACS [2] (Photos, Art paintings, Cartoons and Sketches), which is a dataset built for evaluating a model against the task of domain generalization. 
 
 By domain generalization we refer to the problem of training a model with classes coming from a set of domains (e.g. Art paintings, Cartoons and Sketches) and evaluate how the model performs with samples belonging to the same classes it was trained on but coming from a different domain (e.g. Photos).
 
@@ -92,7 +92,7 @@ We then added a configuration file and python module (responsible for transformi
 
 We trained the model on a Google Cloud Virtual Machine with one GPU. Due to the limitations of the virtual machine GPU memory we could not process the images in their original size, but had to resize them. 
 
-We tried to produce the results of the authors responsible for creating PACS, obtained when they trained on Art Painting, Sketch and Cartoon and tested on Photo.
+We tried to produce the results of the authors responsible for creating PACS, obtained when they trained on Art Painting, Sketch and Cartoon and tested on Photo (which was an accuracy of 89.50).
 
 #### Results
 The PHOTO dataset is trained and evaluated in two different ways. In the first one, the image size is 32 × 32 pixels and the number of clusters is 64. This gave an accuracy of 31.80 ± 0.25 for 1-shot and an accuracy of 40.39 ± 0.24 for 5-shot, training on 60 epochs. We tried to improve the accuracy by increasing the image size to 94 × 94 and by reducing the number of clusters to 32. This gives much better results, even though the training consisted of only 20 epochs (a limitation given by the limited memory we had on the virtual machine). The accuracy for 1-shot increased from 31.80 ± 0.25 to 54.59 ± 0.64 and the accuracy for 5-shot increased from 40.39 ± 0.24 to 70.05 ± 0.23. 
@@ -103,7 +103,7 @@ The PHOTO dataset is trained and evaluated in two different ways. In the first o
 | **Photo 32 × 32**            |   | 31.80 ± 0.25            | 40.39 ± 0.24 |
 | **Photo 94 × 94**            |   | 54.59 ± 0.64            | 70.05 ± 0.23 |
 
-We can see that we did not manage to reach the accuracy obtained by the authors of PACS. However since we only used less than half of the original image size, we expect, given higher resources, that ConstellationNet will be able to produce close to state of the art performance for PACS.
+We can see that we did not manage to reach the accuracy obtained by the authors of PACS (which was 89.50). However since we only used less than half of the original image size, we expect, given higher resources, that ConstellationNet will be able to produce close to state of the art performance for PACS.
 
 ### Discussion
 Using ConstellationNet and few-shot learning also has its downsides. We found out that using this method, training is still a very important part. If there is too little training, the accuracy will significantly be lower. This might be counterintuitive since given the smaller datasets one might expect the model to converge to an optimal local minima at a faster rate.  
