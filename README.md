@@ -3,6 +3,8 @@
 This is the code repository for the reproducibility project for group 16. 
 Follow the following steps (taken from the original repository) to run the model.
 
+Use **PACS_pickle.py** to create the desired pickle files if you are downloading PACS from the original repository (or use the google drive link presented in the next sections for downloading the datasets ready to go).
+
 ### Environment Preparation
 1. Set up a new conda environment and activate it.
    ```bash
