@@ -119,7 +119,7 @@ Furthermore we got promising results, given the hardware limitations, when we tr
 ### Contributions
 Dajt Mullaj - 5649455: Set up the Google Cloud Virtual Machine for reproduction of the results. Run the model to reproduce the results. Prepared the PACS dataset by creating the script, configuration and inserting it into the code pipeline. Made the poster. Worked on the blog post. 
 
-Kirsten Bos - 4589793: Searching for the differences in the code of the different dataset, researching how to create the pickle file, testing/validating the improved photo and also blog writing.
+Kirsten Bos - 4589793: Searching for the differences in the code (py and ymal files) of the different dataset, researching the structure of the pickle file, testing/validating the improved photo (image size of 94) and worked on the blog post.
 
 Marco de Böck - 4494237: Research on PACS, Training and Validation of the dataset PHOTO of [3,32,32] and worked on the blog post.
 
