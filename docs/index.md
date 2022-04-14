@@ -58,7 +58,7 @@ mini-ImageNet contains 100 classes from ILSVRC-2012. The split between training 
 We used the same configuration used by the authors to set the hyperparameters of the model. We present the results on Table 1.
 
 | **Results Backbone: Conv4**  |   | **CIFAR-FS 5-way**            | **mini-ImageNet 5-way**            |
-|------------------------------|---|----------------|--------------|---------------------|--------------|
+|------------------------------|---|-------------------------------|------------------------------------|
 | **Model**                    |   | **1-shot**     | **5-shot**   | **1-shot**          | **5-shot**   |
 | **ConstellationNet (paper)** |   | 69.3 ± 0.3     | 82.7 ± 0.2   | 58.82 ± 0.23        | 75.00 ± 0.18 |
 | **ConstellationNet (ours)**  |   | 69.03 ± 0.35   | 83.03 ± 0.33 |                     |              |
@@ -95,7 +95,7 @@ We tried to produce the results of the authors responsible for creating PACS, ob
 The PHOTO dataset is trained and evaluated in two different ways. In the first one, the image size is 32 × 32 pixels and the number of clusters is 64. This gave an accuracy of 31.80 ± 0.25 for 1-shot and an accuracy of 40.39 ± 0.24 for 5-shot, training on 60 epochs. We tried to improve the accuracy by increasing the image size to 94 × 94 and by reducing the number of clusters to 32. This gives much better results, even though the training consisted of only 20 epochs (a limitation given by the limited memory we had on the virtual machine). The accuracy for 1-shot increased from 31.80 ± 0.25 to 54.59 ± 0.64 and the accuracy for 5-shot increased from 40.39 ± 0.24 to 70.05 ± 0.23. 
 
 | **Results Backbone: Conv4**  |   | **PHOTO (from PACS) 5-way**            |
-|------------------------------|---|-------------------------|--------------|
+|------------------------------|---|----------------------------------------|
 | **Model**                    |   | 1-shot                  | 5-shot       |
 | **Photo 32 × 32**            |   | 31.80 ± 0.25            | 40.39 ± 0.24 |
 | **Photo 94 × 94**            |   | 54.59 ± 0.64            | 70.05 ± 0.23 |
