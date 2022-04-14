@@ -56,7 +56,13 @@ We focused on two datasets the authors used to evaluate their model: CIFAR-FS an
 mini-ImageNet contains 100 classes from ILSVRC-2012. The split between training and testing mirrors the one used for CIFAR-FS, but the size of the images is, instead, 84 × 84.
 
 We used the same configuration used by the authors to set the hyperparameters of the model. We present the results on Table 1.
-TABLE 
+
+| Results Backbone: Conv4  |   | CIFAR-FS 5-way |              | mini-ImageNet 5-way |              |
+|--------------------------|---|----------------|--------------|---------------------|--------------|
+| Model                    |   | 1-shot         | 5-shot       | 1-shot              | 5-shot       |
+| ConstellationNet (paper) |   | 69.3 ± 0.3     | 82.7 ± 0.2   | 58.82 ± 0.23        | 75.00 ± 0.18 |
+| ConstellationNet (ours)  |   | 69.03 ± 0.35   | 83.03 ± 0.33 |                     |              |
+
 The results obtained by us match with the ones presented by the authors within the confidence interval.
 
 ### ConstellationNet for Domain Generalization 
